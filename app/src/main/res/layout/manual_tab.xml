@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/manual_tab"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".ManualControl">
+
+    <LinearLayout
+        android:id="@+id/go_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:context=".ManualControl">
+        <Button
+            android:id="@+id/go_forward"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorForward"
+            android:textSize="12sp"
+            android:text="GO\nFORWARD"
+            android:onClick="goForward" />
+        <Button
+            android:id="@+id/go_backward"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorBackward"
+            android:textSize="12sp"
+            android:text="GO\nBACKWARD"
+            android:onClick="goBackward" />
+        <SeekBar
+            android:id="@+id/g_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/AppTheme.BlackAccent"
+            android:layout_weight="0.75"
+            android:progress="1"
+            android:max="9999" />
+        <TextView
+            android:id="@+id/g_seekbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="57sp"
+            android:textAlignment="textEnd"
+            android:layout_weight="0"
+            android:textSize="10sp"
+            android:text="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rotate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:context=".ManualControl">
+        <Button
+            android:id="@+id/rotate_left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorLeft"
+            android:textSize="12sp"
+            android:text="ROTATE\nLEFT"
+            android:onClick="rotateLeft" />
+        <Button
+            android:id="@+id/rotate_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorRight"
+            android:textSize="12sp"
+            android:text="ROTATE\nRIGHT"
+            android:onClick="rotateRight" />
+        <SeekBar
+            android:id="@+id/rotate_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/AppTheme.BlackAccent"
+            android:layout_weight="0.75"
+            android:progress="1"
+            android:max="9999" />
+        <TextView
+            android:id="@+id/rotate_seekbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="57sp"
+            android:textAlignment="textEnd"
+            android:layout_weight="0"
+            android:textSize="10sp"
+            android:text="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/servo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:context=".ManualControl">
+        <Button
+            android:id="@+id/move_servo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorServo"
+            android:textSize="12sp"
+            android:text="MOVE SERVO"
+            android:onClick="moveServo" />
+        <SeekBar
+            android:id="@+id/servo_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/AppTheme.BlackAccent"
+            android:layout_weight="0.84"
+            android:progress="90"
+            android:max="180" />
+        <TextView
+            android:id="@+id/servo_seekbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="18sp"
+            android:textAlignment="textEnd"
+            android:layout_weight="0"
+            android:textSize="10sp"
+            android:text="90"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/check_distance_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:context=".ManualControl">
+        <Button
+            android:id="@+id/check_distance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorDistance"
+            android:textSize="12sp"
+            android:text="CHECK DISTANCE"
+            android:onClick="checkDistance" />
+        <SeekBar
+            android:id="@+id/measurements_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.84"
+            android:theme="@style/AppTheme.BlackAccent"
+            android:progress="1"
+            android:max="99" />
+        <TextView
+            android:id="@+id/measurements_seekbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="18sp"
+            android:textAlignment="textEnd"
+            android:layout_weight="0"
+            android:textSize="10sp"
+            android:text="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/waveshare_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.98"
+        android:orientation="horizontal"
+        tools:context=".ManualControl">
+        <Button
+            android:id="@+id/check_acceleration"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorAcceleration"
+            android:textSize="12sp"
+            android:text="CHECK ACCELERATION"
+            android:onClick="checkAcceleration" />
+        <Button
+            android:id="@+id/check_gyroscope"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorGyroscope"
+            android:textSize="12sp"
+            android:text="CHECK ANGULAR VELOCITY"
+            android:onClick="checkGyroscope" />
+        <Button
+            android:id="@+id/check_magnetometer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.15"
+            android:layout_margin="5sp"
+            android:background="@color/colorMagnetometer"
+            android:textSize="12sp"
+            android:text="CHECK MAGNETIC FIELD"
+            android:onClick="checkMagnetometer" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/step_resolution_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:context=".ManualControl">
+        <Button
+            android:id="@+id/change_step_resolution"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorStepResolution"
+            android:textSize="12sp"
+            android:text="CHANGE STEP RESOLUTION"
+            android:onClick="changeStepResolution" />
+        <SeekBar
+            android:id="@+id/step_resolution_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.13"
+            android:theme="@style/AppTheme.BlackAccent"
+            android:progress="0"
+            android:max="5" />
+        <TextView
+            android:id="@+id/step_resolution_seekbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="24sp"
+            android:textAlignment="textEnd"
+            android:layout_weight="0"
+            android:textSize="10sp"
+            android:text="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/misc_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:context=".ManualControl">
+        <Button
+            android:id="@+id/check_engines"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorCheckEngines"
+            android:textSize="12sp"
+            android:text="CHECK ENGINES"
+            android:onClick="checkEngines" />
+        <Button
+            android:id="@+id/ping"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorPing"
+            android:textSize="12sp"
+            android:text="PING"
+            android:onClick="ping" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reset_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        tools:context=".ManualControl">
+        <Button
+            android:id="@+id/restart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorRestart"
+            android:textSize="12sp"
+            android:text="RESTART\nARDUINO"
+            android:onClick="restartArduino" />
+        <Button
+            android:id="@+id/esp_factory_settings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5sp"
+            android:background="@color/colorFactoryReset"
+            android:textSize="12sp"
+            android:text="ESP8266\nFACTORY RESET"
+            android:onClick="espFactorySettings" />
+    </LinearLayout>
+</LinearLayout>

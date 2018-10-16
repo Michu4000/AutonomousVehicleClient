@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scan_tab"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".Scan">
+
+    <TextView
+        android:id="@+id/dir_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:text="Direction: ?"/>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:layout_weight="1"
+        android:layout_margin="2sp"/>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1.8"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="35sp"
+        android:background="@color/colorRight"
+        android:textSize="12sp"
+        android:text="SAVE TO FILE"
+        android:onClick="save"
+        android:enabled="false"/>
+
+    <LinearLayout
+        android:id="@+id/skip_angle_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10sp"
+        android:layout_marginHorizontal="5sp"
+        android:orientation="horizontal"
+        tools:context=".Scan">
+        <TextView
+            android:id="@+id/sa_seekbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="200sp"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:text="Skip angle:"/>
+        <SeekBar
+            android:id="@+id/sa_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.BlackAccent"
+            android:layout_weight="0.75"
+            android:progress="0"
+            android:max="9" />
+        <TextView
+            android:id="@+id/sa_seekbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="18sp"
+            android:textAlignment="textEnd"
+            android:textSize="10sp"
+            android:text="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/measurements_number_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20sp"
+        android:layout_marginHorizontal="5sp"
+        android:orientation="horizontal"
+        tools:context=".Scan">
+        <TextView
+            android:id="@+id/mn_seekbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="200sp"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:text="Number of measurements per angle:"/>
+        <SeekBar
+            android:id="@+id/mn_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.BlackAccent"
+            android:layout_weight="0.75"
+            android:progress="0"
+            android:max="99" />
+        <TextView
+            android:id="@+id/mn_seekbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="18sp"
+            android:textAlignment="textEnd"
+            android:textSize="10sp"
+            android:text="1"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25sp"
+        android:layout_marginBottom="5sp"
+        android:background="@color/colorForward"
+        android:textSize="12sp"
+        android:text="SCAN"
+        android:onClick="start" />
+
+</LinearLayout>
